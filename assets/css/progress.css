@@ -1,0 +1,147 @@
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.progress__title {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.progress__wrap {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  transition: var(--animation-duration);
+}
+
+@media screen and (orientation: portrait) {
+  .progress__wrap {
+    flex-direction: column;
+  }
+}
+
+.progress-frame {
+  transition: var(--animation-duration);
+}
+
+.progress--hidden .progress-frame {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.progress-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle__bg {
+  r: 45;
+  fill: none;
+  stroke: var(--progress-color-dark);
+  stroke-width: 10;
+}
+
+.progress-circle__arc {
+  r: 45;
+  fill: none;
+  stroke: var(--progress-color-accent);
+  stroke-width: 10;
+  stroke-linecap: butt;
+  stroke-dasharray: calc(2 * pi * 45); /* Длина окружности: 2πr */
+  stroke-dashoffset: calc(2 * pi * 45);
+  transform-origin: center;
+  transition: stroke-dashoffset var(--animation-duration) linear;
+}
+.progress--rotated .progress-circle__arc {
+  animation: rotate-progress-circle 2s linear infinite;
+}
+@keyframes rotate-progress-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progress-control {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress-control__label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.progress-control__label input[type="text"] {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border-radius: 34px;
+  border: 1px solid var(--border-color-black);
+  text-align: center;
+  outline: none;
+  transition: var(--animation-duration) ease-in-out;
+}
+
+.progress-control__label input:disabled ~ .progress-control__slider {
+  background-color: var(--progress-color-grey);
+  cursor: not-allowed;
+}
+
+.progress-control__label input[type="text"]:disabled {
+  border-color: var(--progress-color-grey);
+  cursor: not-allowed;
+}
+
+.progress-control__switch input {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.progress-control__slider {
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+  height: 34px;
+  border-radius: 34px;
+  background-color: var(--progress-color-dark);
+  transition: var(--animation-duration) ease-in-out;
+}
+
+.progress-control__slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: var(--bg-color-white);
+  transition: var(--animation-duration) ease-in-out;
+}
+
+.progress-control__switch input:checked + .progress-control__slider {
+  background-color: var(--progress-color-accent);
+}
+
+.progress-control__switch input:checked + .progress-control__slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

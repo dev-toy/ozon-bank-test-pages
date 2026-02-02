@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ozon - test Progress</title>
+    <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/progress.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section main-s01">
+        <div class="container">
+          <div class="main-s01__wrap">
+            <h1>Реализация блока Progress</h1>
+
+            <div class="progress">
+              <p class="progress__title">Progress</p>
+              <div class="progress__wrap">
+                <div class="progress-frame">
+                  <div class="progress-circle">
+                    <svg
+                      viewBox="0 0 100 100"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle class="progress-circle__bg" cx="50" cy="50" />
+                      <circle class="progress-circle__arc" cx="50" cy="50" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="progress-control">
+                  <label class="progress-control__label">
+                    <input
+                      class="progress-control__value"
+                      type="text"
+                      min="0"
+                      max="100"
+                      value="0"
+                    />
+                    <span>Value</span>
+                  </label>
+                  <label
+                    class="progress-control__label progress-control__switch"
+                  >
+                    <input class="progress-control__animate" type="checkbox" />
+                    <span class="progress-control__slider"></span>
+                    <span>Animate</span>
+                  </label>
+                  <label
+                    class="progress-control__label progress-control__switch"
+                  >
+                    <input
+                      class="progress-control__rotate"
+                      disabled
+                      type="checkbox"
+                    />
+                    <span class="progress-control__slider"></span>
+                    <span>Rotate</span>
+                  </label>
+                  <label
+                    class="progress-control__label progress-control__switch"
+                  >
+                    <input class="progress-control__hide" type="checkbox" />
+                    <span class="progress-control__slider"></span>
+                    <span>Hide</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- <script src="/assets/js/script.js"></script> -->
+    <script src="/assets/js/progress.js"></script>
+  </body>
+</html>

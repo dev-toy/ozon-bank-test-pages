@@ -1,0 +1,37 @@
+:root {
+  --animation-duration: 0.3s;
+  --progress-color-accent: #0000ff;
+  --progress-color-grey: #f0f0f0;
+  --progress-color-dark: #d6d6d6;
+  --bg-color-white: #fff;
+  --border-color-black: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.main-s01__wrap h1 {
+  margin-bottom: 30px;
+}
