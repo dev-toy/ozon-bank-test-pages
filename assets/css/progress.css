@@ -59,6 +59,7 @@
   stroke-dashoffset: calc(2 * pi * 45);
   transform-origin: center;
   transition: stroke-dashoffset var(--animation-duration) linear;
+  will-change: stroke-dashoffset;
 }
 .progress--rotated .progress-circle__arc {
   animation: rotate-progress-circle 2s linear infinite;
