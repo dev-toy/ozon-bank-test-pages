@@ -126,6 +126,7 @@ class Progress {
   }
 
   _stopAnimation() {
+    this.setValue(0);
     clearInterval(this.animationInterval);
     this.arc.style.transition = "none";
     this.arc.style.strokeDashoffset = this.circumference;
