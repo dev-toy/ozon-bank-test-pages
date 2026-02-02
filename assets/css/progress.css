@@ -27,7 +27,7 @@
 }
 
 .progress--hidden .progress-frame {
-  display: none;
+  /* display: none; */
   opacity: 0;
   visibility: hidden;
 }
@@ -61,7 +61,7 @@
   transition: stroke-dashoffset var(--animation-duration) linear;
   will-change: stroke-dashoffset;
 }
-.progress--rotated .progress-circle__arc {
+.progress--animated .progress-circle__arc {
   animation: rotate-progress-circle 2s linear infinite;
 }
 @keyframes rotate-progress-circle {
