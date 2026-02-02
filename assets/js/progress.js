@@ -15,11 +15,11 @@ class Progress {
     this.animateToggle = element.querySelector(".progress-control__animate");
     this.rotateToggle = element.querySelector(".progress-control__rotate");
     this.hideToggle = element.querySelector(".progress-control__hide");
-    const radius = window
-      .getComputedStyle(this.arc)
-      .getPropertyValue("r")
-      .replace(/[^0-9]/g, "");
-    this.circumference = 2 * Math.PI * radius;
+    // const radius = window
+    //   .getComputedStyle(this.arc)
+    //   .getPropertyValue("r")
+    //   .replace(/[^0-9]/g, "");
+    this.circumference = 2 * Math.PI * 45;
 
     this._initDOM();
   }
